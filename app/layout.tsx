@@ -23,7 +23,7 @@ export default function RootLayout({
         <AuthProvider>
           <nav className="bg-card shadow-md">
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-              <Link href="/" className="text-2xl font-bold text-primary hover:text-primary/90 transition-colors">DSA Question Bank</Link>
+              <Link href="/" className="text-2xl font-bold text-primary hover:text-primary/90 transition-colors">CodeDSA</Link>
               <div className="flex items-center space-x-4">
                 <Link href="/add-question" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-2 px-4 rounded-md transition-colors">
                   Add Question

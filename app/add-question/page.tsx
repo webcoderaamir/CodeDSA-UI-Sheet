@@ -3,15 +3,16 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import QuestionForm from '../components/QuestionForm'
-import { addQuestion } from '../data/questionData'
+import { addQuestion, Question } from '../data/questionData'
 
 export default function AddQuestionPage() {
   const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleSubmit = async (questionData) => {
+  // Define the type for questionData as Omit<Question, 'id'>
+  const handleSubmit = async (questionData: Omit<Question, 'id'>) => {
     setIsSubmitting(true)
-    await addQuestion(questionData)
+    await addQuestion(questionData)  // questionData now has the correct type
     setIsSubmitting(false)
     router.push('/')
   }
@@ -23,4 +24,3 @@ export default function AddQuestionPage() {
     </div>
   )
 }
-
